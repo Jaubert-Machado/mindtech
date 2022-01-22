@@ -44,7 +44,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--color-grey-dark-1);
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -222,14 +222,14 @@ li > input {
   font-size: 2rem;
   border-style: none;
   color: black;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: bold;
 }
 
 h2 {
   font-size: 2rem;
   position: absolute;
-  top: 1rem;
+  top: 0rem;
   left: 1rem;
   font-weight: none;
 }
@@ -237,31 +237,52 @@ h2 {
 p {
   position: absolute;
   font-size: 1.3rem;
-  top: 3.8rem;
+  font-weight: 700;
+  top: 3.5rem;
   left: 11rem;
-  height: 5rem;
-  width: 35rem;
+  height: 5.3rem;
+  width: 51.8rem;
+  z-index: 100;
+  color: black;
   overflow: hidden;
+  overflow-y: scroll;
+}
+
+.description-box {
+  content: "";
+  width: 53rem;
+  border-radius: 1rem;
+  height: 6rem;
+  top: 3.3rem;
+  left: 10rem;
+  position: absolute;
+  background-color: #d7e9f7;
 }
 
 span {
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
   left: 1rem;
 }
 
 .input-edit-title {
   position: absolute;
-  top: 1.2rem;
-  left: 1rem;
+  top: 0.3rem;
+  left: 0.3rem;
 }
 
 .input-edit-description {
   position: absolute;
-  left: 11rem;
-  top: 5rem;
+  left: 10rem;
+  top: 3.3rem;
+  padding: 0.7rem;
+  font-weight: 700;
+  height: 6rem;
   font-size: 1.3rem;
-  width: 35rem;
+  border-radius: 1rem;
+  width: 53rem;
+  z-index: 2;
+  background-color: var(--color-grey-light-1);
 }
 
 .btn-del,
@@ -296,7 +317,7 @@ span {
 
   margin: 0.5rem;
   width: 7rem;
-  height: 69%;
+  height: 8.7rem;
   position: absolute;
 
   border-style: none;
@@ -338,7 +359,7 @@ span {
   margin-bottom: 1rem;
   align-items: center;
   background-color: var(--color-grad-1);
-  height: 10rem;
+  height: 12rem;
 }
 
 .activity-done {

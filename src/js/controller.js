@@ -29,9 +29,13 @@ class TodoList {
    */
   _getSubmitTime() {
     const date = new Date();
-    const dateLocal = date.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-    console.log(date);
-    return dateLocal;
+    const dateLocal = new Intl.DateTimeFormat("pt-BR", {
+      dateStyle: "full",
+    }).format(date);
+    const dateUppercase =
+      dateLocal.charAt(0).toUpperCase() + dateLocal.slice(1);
+
+    return dateUppercase;
   }
 
   /**
@@ -49,6 +53,7 @@ class TodoList {
             <span class="date-activity">${data.date}</span>
             <button class="btn-del">Deletar</button>
             <button class="btn-edit">Editar</button>
+            <span class="description-box"></span>
             <button class="btn-done complete-task">
             <i class="ph-check complete-task"></i></button>
         </li>
@@ -116,7 +121,7 @@ listDisplay.addEventListener("click", function (e) {
     // Crio o botão editar ao selecionar os antigos elementos e pegar seus valores, crio dois inputs com os valores ja inseridos no antigo para edição e depois substituo os valores antigos pelos novos valores //
     const [oldTitle, oldDescription] = container.children;
     const newTitle = document.createElement("input");
-    const newDescription = document.createElement("input");
+    const newDescription = document.createElement("textarea");
 
     newTitle.classList.add("input-edit-title");
     newDescription.classList.add("input-edit-description");
@@ -153,6 +158,6 @@ listDisplay.addEventListener("click", function (e) {
     li.classList.toggle("activity-done");
     li.children[0].classList.toggle("done");
     li.children[1].classList.toggle("done");
-    li.children[5].classList.toggle("btn-done-green");
+    li.children[6].classList.toggle("btn-done-green");
   }
 });
