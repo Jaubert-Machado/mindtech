@@ -1,0 +1,359 @@
+:root {
+  --color-grad-1: #2e246d;
+  --color-grad-2: #090e4e;
+
+  --color-grey-light-1: #f9f5f3;
+  --color-grey-light-2: #f2efee;
+  --color-grey-light-3: #d3c7c3;
+  --color-grey-dark-1: #615551;
+  --color-grey-dark-2: #918581;
+
+  --box-shadow-sutil: 0 3px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*Aqui faço um reset para que cada rem tenha exatamente 10px, deixando mais fácil o trabalho com a unidade e não abrindo mão da 
+flexibilidade que rem traz*/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background: rgb(46, 36, 109);
+  background: linear-gradient(
+    137deg,
+    var(--color-grad-1) 40%,
+    var(--color-grad-2) 60%
+  );
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color-grey-dark-1);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.container {
+  border-radius: 9px;
+  box-shadow: 0 2rem 6rem 0.5rem rgba(var(--color-grey-dark-1), 0.2);
+  display: grid;
+  grid-template-rows: 10rem 1fr minmax(100rem, auto) 10rem;
+  grid-template-columns: 1fr 5fr 1fr;
+  max-width: 120rem;
+  min-height: 117rem;
+  margin: 4vw auto;
+  overflow: hidden;
+
+  @media only screen and (max-width: $bp-large) {
+    border-radius: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+/* Componentes */
+
+.header {
+  align-items: center;
+  background-color: var(--color-grey-light-2);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.title {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.btn-plus-round {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+  align-items: center;
+  display: flex;
+  border-radius: 100px;
+  border: none;
+  background-color: var(--color-grad-1);
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  font-size: 3rem;
+  justify-content: center;
+  justify-self: flex-end;
+  margin-right: 5rem;
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.btn-plus-round-default {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  z-index: 102;
+  justify-self: center;
+  margin: 0;
+}
+
+.btn-plus-round:hover {
+  transform: translateY(-1.2px);
+  box-shadow: var(--box-shadow-sutil);
+}
+
+.btn-plus-round:active {
+  transform: translateY(-0.1px);
+  box-shadow: var(--box-shadow-sutil);
+}
+
+.activity-form {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  margin-top: 3rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+  align-items: center;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.new-activity-input {
+  font-size: 1.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  transition: all 0.2s;
+  width: 48%;
+}
+
+.new-activity-input:focus {
+  width: 50%;
+}
+
+.btn-form-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem;
+  padding: 1.2rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  background-color: var(--color-grad-1);
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-form-submit:hover {
+  transform: scale(1.1);
+  box-shadow: var(--box-shadow-sutil);
+}
+
+.btn-form-submit:active {
+  transform: translateY(0.5rem);
+  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.background {
+  background-color: var(--color-grey-light-2);
+
+  grid-column: 1 / 4;
+  grid-row: 1/ 5;
+}
+
+.list-container {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+  transition: all 0.2s;
+  transform: translateY(-18rem);
+}
+
+.list-container-default {
+  opacity: 0;
+}
+
+li {
+  border-radius: 0.5rem;
+  transition: all 0.5s;
+}
+
+li:hover {
+  background-color: var(--color-grad-2);
+}
+
+.li-done {
+  background-color: var(--color-grey-dark-2);
+}
+
+li > input {
+  padding-left: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  font-size: 2rem;
+  border-style: none;
+  color: black;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-weight: none;
+}
+
+p {
+  position: absolute;
+  font-size: 1.3rem;
+  top: 3.8rem;
+  left: 11rem;
+  height: 5rem;
+  width: 35rem;
+  overflow: hidden;
+}
+
+span {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.input-edit-title {
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+}
+
+.input-edit-description {
+  position: absolute;
+  left: 11rem;
+  top: 5rem;
+  font-size: 1.3rem;
+  width: 35rem;
+}
+
+.btn-del,
+.btn-edit {
+  border-radius: 1rem 1rem 1rem 1rem;
+  margin: 0.5rem;
+  width: 6rem;
+  height: 30%;
+  position: absolute;
+  border-style: none;
+  font-weight: 600;
+
+  transition: all 0.5s ease;
+}
+
+.btn-del {
+  top: 1.2rem;
+  right: 1rem;
+}
+
+.btn-edit {
+  right: 1rem;
+  bottom: 1.2rem;
+}
+
+.btn-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 8rem;
+  font-size: 3rem;
+
+  margin: 0.5rem;
+  width: 7rem;
+  height: 69%;
+  position: absolute;
+
+  border-style: none;
+  font-weight: 600;
+  border-radius: 1rem 1rem 1rem 1rem;
+
+  transition: all 0.5s ease;
+}
+
+.btn-del:hover {
+  background-color: #dd4a48;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #ffe162;
+}
+
+.btn-done:hover {
+  background-color: #34be82;
+}
+
+.btn-done-green {
+  background-color: #34be82;
+}
+
+.list-display {
+  background-color: var(--color-grey-light-1);
+  padding: 2rem;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.list-item {
+  display: flex;
+  position: relative;
+  color: white;
+
+  margin-bottom: 1rem;
+  align-items: center;
+  background-color: var(--color-grad-1);
+  height: 10rem;
+}
+
+.activity-done {
+  opacity: 0.5;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+
+.list-container-movement {
+  transform: translateY(3rem);
+}
+
+.done {
+  text-decoration: line-through;
+}

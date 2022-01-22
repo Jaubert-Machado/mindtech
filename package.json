@@ -1,0 +1,21 @@
+{
+  "name": "mindtech",
+  "version": "1.0.0",
+  "description": "ToDo List",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html && parcel watch index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Jaubert Machado",
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.20.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.1.1",
+    "parcel": "^2.1.1",
+    "sass": "^1.47.0"
+  }
+}

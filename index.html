@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="src/img/cropped-favicon.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="src/css/style.css" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script defer src="src/js/controller.js" type="module"></script>
+
+    <title>Todo List | Mindtech</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Todo List -</h1>
+        <img src="/src/img/logo-site-1131.png" alt="" />
+      </header>
+
+      <button class="btn-plus-round btn-plus-round-default">
+        <i class="ph-plus"></i>
+      </button>
+
+      <form class="activity-form hidden">
+        <label for="title">Tarefa</label>
+        <input class="new-activity-input" type="text" name="title" required />
+        <label for="description">Descrição</label>
+        <input class="new-activity-input" type="text" name="description" />
+        <button class="btn-form-submit">Salvar</button>
+      </form>
+
+      <div class="list-container list-container-default">
+        <ul class="list-display"></ul>
+        <ul class="done-display"></ul>
+      </div>
+
+      <div class="background"></div>
+    </div>
+  </body>
+</html>
