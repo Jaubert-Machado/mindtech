@@ -256,7 +256,7 @@ p {
   top: 3.3rem;
   left: 10rem;
   position: absolute;
-  background-color: #d7e9f7;
+  background-color: var(--color-grey-light-2);
 }
 
 span {
